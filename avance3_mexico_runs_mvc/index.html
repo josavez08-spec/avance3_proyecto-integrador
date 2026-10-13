@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mexico Runs - Renta de Vehiculos</title>
+    <link rel="stylesheet" href="public/css/styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Mexico Runs inicio">
+        <span class="brand-mark">MR</span>
+        <span>Mexico Runs</span>
+      </a>
+      <nav class="main-nav" aria-label="Navegacion principal">
+        <a href="#inicio">Inicio</a>
+        <a href="#catalogo">Catalogo</a>
+        <a href="#reservas">Reservaciones</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <a class="admin-link" href="#admin">Admin</a>
+    </header>
+
+    <main id="inicio">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Renta de vehiculos en Chiapas</p>
+          <h1>Encuentra un auto disponible para tu siguiente ruta.</h1>
+          <p class="hero-text">
+            Consulta unidades, compara precios por dia y aparta tu vehiculo con
+            una experiencia rapida, clara y segura.
+          </p>
+          <form class="search-panel" id="reservation-form">
+            <label>
+              Lugar de entrega
+              <select id="pickup-city" name="pickupCity">
+                <option>Tuxtla Gutierrez</option>
+                <option>San Cristobal de las Casas</option>
+                <option>Tapachula</option>
+              </select>
+            </label>
+            <label>
+              Fecha de inicio
+              <input id="start-date" name="startDate" type="date" required>
+            </label>
+            <label>
+              Fecha de devolucion
+              <input id="end-date" name="endDate" type="date" required>
+            </label>
+            <button type="submit">Cotizar</button>
+          </form>
+        </div>
+
+        <aside class="promo" aria-label="Promocion destacada">
+          <span>Promocion</span>
+          <h2>Chevrolet Sail Sedan</h2>
+          <p>Desde $650 MXN por dia. Ideal para recorridos urbanos.</p>
+        </aside>
+      </section>
+
+      <section class="content-grid">
+        <section class="catalog-section" id="catalogo" aria-labelledby="catalog-title">
+          <div class="section-header">
+            <div>
+              <p class="eyebrow">Catalogo</p>
+              <h2 id="catalog-title">Vehiculos disponibles</h2>
+            </div>
+            <div class="filters" role="group" aria-label="Filtros de vehiculo">
+              <button class="filter-button active" type="button" data-filter="Todos">Todos</button>
+              <button class="filter-button" type="button" data-filter="Sedan">Sedan</button>
+              <button class="filter-button" type="button" data-filter="SUV">SUV</button>
+              <button class="filter-button" type="button" data-filter="Pick-up">Pick-up</button>
+            </div>
+          </div>
+          <div class="vehicle-grid" id="vehicle-list"></div>
+        </section>
+
+        <aside class="summary-panel" id="reservas" aria-labelledby="summary-title">
+          <p class="eyebrow">Reserva</p>
+          <h2 id="summary-title">Cotizacion rapida</h2>
+          <div id="quote-output" class="quote-output">
+            Selecciona fechas para estimar el costo de renta.
+          </div>
+          <div class="status-list">
+            <span><strong>8</strong> disponibles</span>
+            <span><strong>2</strong> en mantenimiento</span>
+            <span><strong>24/7</strong> consulta web</span>
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="contacto">
+      <span>Mexico Runs - Sistema web de renta de vehiculos</span>
+      <span>Equipo 7</span>
+    </footer>
+
+    <script src="app/models/vehicleModel.js"></script>
+    <script src="app/views/homeView.js"></script>
+    <script src="app/controllers/homeController.js"></script>
+  </body>
+</html>
